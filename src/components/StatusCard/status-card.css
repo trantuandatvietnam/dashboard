@@ -1,0 +1,61 @@
+.status-card {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--main-bg);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.status-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    width: 30%;
+    height: 100%;
+    z-index: 1;
+}
+
+.status-cart__info {
+    flex-grow: 1;
+    text-align: center;
+    text-transform: capitalize;
+    z-index: 1;
+}
+
+.status-cart__info > h4 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.status-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-image: linear-gradient(
+        to top,
+        var(--main-color),
+        var(--second-color)
+    );
+    padding-top: 100%;
+    left: -50%;
+    top: 0;
+    border-radius: 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.status-card:hover::before {
+    transform: scale(2.5);
+}
+
+.status-card:hover {
+    color: var(--txt-white);
+}
